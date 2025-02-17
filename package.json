@@ -1,0 +1,20 @@
+{
+  "name": "slice-management",
+  "version": "0.1.0",
+  "description": "Set of classes for the quick creation and setting of slices",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "slice",
+    "create slice"
+  ],
+  "author": "Valerii Panov",
+  "license": "ISC",
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.5.1",
+    "axios": "^1.7.9",
+    "redux-persist": "^6.0.0"
+  }
+}
