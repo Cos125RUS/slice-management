@@ -2,16 +2,22 @@
   "name": "slice-management",
   "version": "0.1.1",
   "description": "Set of classes for the quick creation and setting of slices",
+  "license": "ISC",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "files": [
+    "index.js"
+  ],
   "keywords": [
     "slice",
     "create slice"
   ],
-  "author": "Valerii Panov",
-  "license": "ISC",
+  "author": {
+    "name": "Valerii Panov",
+    "email": "val250640@mail.ru"
+  },
   "dependencies": {
     "@reduxjs/toolkit": "^2.5.1",
     "axios": "^1.7.9",
