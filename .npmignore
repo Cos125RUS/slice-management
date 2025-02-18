@@ -1,3 +1,5 @@
 # .npmignore
 lib/
 node_modules/
+.idea/
+test.js
