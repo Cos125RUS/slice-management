@@ -1,12 +1,11 @@
 {
   "name": "slice-management",
-  "version": "0.1.15",
+  "version": "0.1.16",
   "description": "Set of classes for the quick creation and setting of slices",
   "license": "ISC",
   "main": "./lib/index.js",
   "exports": {
-    "./package.json": "./package.json",
-    ".": "./lib/index.js"
+    "default": "./lib/index.js"
   },
   "scripts": {
     "build": "webpack",
