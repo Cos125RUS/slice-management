@@ -1,9 +1,13 @@
 {
   "name": "slice-management",
-  "version": "0.1.12",
+  "version": "0.1.14",
   "description": "Set of classes for the quick creation and setting of slices",
   "license": "ISC",
-  "main": "./dist/slice-management.js",
+  "main": "./lib/index.js",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": "./lib/index.js"
+  },
   "scripts": {
     "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
