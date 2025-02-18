@@ -1,6 +1,6 @@
 {
   "name": "slice-management",
-  "version": "0.1.10",
+  "version": "0.1.12",
   "description": "Set of classes for the quick creation and setting of slices",
   "license": "ISC",
   "main": "./dist/slice-management.js",

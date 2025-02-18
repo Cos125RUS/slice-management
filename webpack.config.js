@@ -15,8 +15,10 @@ export default {
     output: {
         path: path.resolve(__dirname, 'dist'), // Папка для сборки
         filename: 'slice-management.js', // Имя выходного файла
-        library: 'SliceManagement', // Имя библиотеки (будет доступно в глобальной области видимости)
-        libraryTarget: 'umd', // Универсальный модуль (поддержка CommonJS, AMD и глобальной переменной)
+        library: {
+            name: 'SliceManagement', // Имя библиотеки
+            type: 'umd', // Универсальный модуль (поддержка CommonJS, AMD и глобальной переменной)
+        },
         globalObject: 'this', // Для корректной работы в Node.js и браузере
     },
 
