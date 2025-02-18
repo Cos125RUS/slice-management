@@ -8,8 +8,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "exports": {
-    "default": {
-      "default": "./index.js"
+    ".": {
+      "default": {
+        "default": "./index.js"
+      }
     }
   },
   "type": "module",
