@@ -1,18 +1,11 @@
 {
   "name": "slice-management",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Set of classes for the quick creation and setting of slices",
   "license": "ISC",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "exports": {
-    ".": {
-      "default": {
-        "default": "./index.js"
-      }
-    }
   },
   "type": "module",
   "keywords": [
