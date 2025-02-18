@@ -4,4 +4,4 @@ node_modules/
 .idea/
 test.js
 .babelrc
-webpack.config.js
+webpack.config.cjs

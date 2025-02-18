@@ -12,6 +12,42 @@ return /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ 215:
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+var __webpack_unused_export__;
+
+
+__webpack_unused_export__ = true;
+exports.A = createWebStorage;
+
+var _getStorage = _interopRequireDefault(__webpack_require__(449));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function createWebStorage(type) {
+  var storage = (0, _getStorage.default)(type);
+  return {
+    getItem: function getItem(key) {
+      return new Promise(function (resolve, reject) {
+        resolve(storage.getItem(key));
+      });
+    },
+    setItem: function setItem(key, item) {
+      return new Promise(function (resolve, reject) {
+        resolve(storage.setItem(key, item));
+      });
+    },
+    removeItem: function removeItem(key) {
+      return new Promise(function (resolve, reject) {
+        resolve(storage.removeItem(key));
+      });
+    }
+  };
+}
+
+/***/ }),
+
 /***/ 449:
 /***/ ((__unused_webpack_module, exports) => {
 
@@ -56,42 +92,6 @@ function getStorage(type) {
 
     return noopStorage;
   }
-}
-
-/***/ }),
-
-/***/ 596:
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-var __webpack_unused_export__;
-
-
-__webpack_unused_export__ = true;
-exports.A = createWebStorage;
-
-var _getStorage = _interopRequireDefault(__webpack_require__(449));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function createWebStorage(type) {
-  var storage = (0, _getStorage.default)(type);
-  return {
-    getItem: function getItem(key) {
-      return new Promise(function (resolve, reject) {
-        resolve(storage.getItem(key));
-      });
-    },
-    setItem: function setItem(key, item) {
-      return new Promise(function (resolve, reject) {
-        resolve(storage.setItem(key, item));
-      });
-    },
-    removeItem: function removeItem(key) {
-      return new Promise(function (resolve, reject) {
-        resolve(storage.removeItem(key));
-      });
-    }
-  };
 }
 
 /***/ })
@@ -158,12 +158,12 @@ __webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  CaseCreator: () => (/* reexport */ caseCreator),
-  ConverterChain: () => (/* reexport */ converterChain),
-  CustomSlice: () => (/* reexport */ customSlice),
-  PersistSlice: () => (/* reexport */ persistSlice),
-  PersistSliceManager: () => (/* reexport */ persistSliceManager),
-  SliceManager: () => (/* reexport */ sliceManager),
+  CaseCreator: () => (/* reexport */ CaseCreator),
+  ConverterChain: () => (/* reexport */ ConverterChain),
+  CustomSlice: () => (/* reexport */ CustomSlice),
+  PersistSlice: () => (/* reexport */ PersistSlice),
+  PersistSliceManager: () => (/* reexport */ PersistSliceManager),
+  SliceManager: () => (/* reexport */ SliceManager),
   defaultLoader: () => (/* reexport */ defaultLoader),
   getDeleter: () => (/* reexport */ getDeleter),
   getNewLoader: () => (/* reexport */ getNewLoader),
@@ -7918,7 +7918,6 @@ _defineProperty(CaseCreator, "create", function () {
   var fulfilled = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : null;
   return new _CaseCreator(loader, converter, stateVariable, fulfilled);
 });
-/* harmony default export */ const caseCreator = (CaseCreator);
 ;// ./lib/cases/loadingApiCases.js
 
 
@@ -7991,7 +7990,6 @@ _ConverterChain = ConverterChain;
 converterChain_defineProperty(ConverterChain, "create", function () {
   return new _ConverterChain();
 });
-/* harmony default export */ const converterChain = (ConverterChain);
 ;// ./lib/converters/snakeCaseToCamelCaseConverter.js
 function snakeCaseToCamelCaseConverter_typeof(o) { "@babel/helpers - typeof"; return snakeCaseToCamelCaseConverter_typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, snakeCaseToCamelCaseConverter_typeof(o); }
 /**
@@ -8365,7 +8363,6 @@ var CustomSlice = /*#__PURE__*/customSlice_createClass(function CustomSlice(slic
   this.reducer = customSlice_classPrivateFieldGet(_slice, this).reducer;
   this.actions = customSlice_classPrivateFieldGet(_slice, this).actions;
 });
-/* harmony default export */ const customSlice = (CustomSlice);
 ;// ./node_modules/redux-persist/es/constants.js
 var KEY_PREFIX = 'persist:';
 var constants_FLUSH = 'persist/FLUSH';
@@ -8975,8 +8972,7 @@ var PersistSlice = /*#__PURE__*/function (_CustomSlice) {
   }
   _inherits(PersistSlice, _CustomSlice);
   return persistSlice_createClass(PersistSlice);
-}(customSlice);
-/* harmony default export */ const persistSlice = (PersistSlice);
+}(CustomSlice);
 ;// ./lib/slice-manager/sliceManager.js
 function sliceManager_typeof(o) { "@babel/helpers - typeof"; return sliceManager_typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, sliceManager_typeof(o); }
 function sliceManager_classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
@@ -9109,7 +9105,7 @@ var SliceManager = /*#__PURE__*/function () {
 
       //Проверка наличия кейсов. Если их нет, создать дефолтные
       if (!sliceManager_classPrivateFieldGet(_caseCollection, _this).length) {
-        sliceManager_classPrivateFieldGet(_caseCollection, _this).push(caseCreator.create(sliceManager_classPrivateFieldGet(sliceManager_loader, _this)).build());
+        sliceManager_classPrivateFieldGet(_caseCollection, _this).push(CaseCreator.create(sliceManager_classPrivateFieldGet(sliceManager_loader, _this)).build());
       }
 
       //Создание слайса
@@ -9123,7 +9119,7 @@ var SliceManager = /*#__PURE__*/function () {
           });
         }
       }));
-      return new customSlice(sliceManager_classPrivateFieldGet(sliceManager_slice, _this), sliceManager_classPrivateFieldGet(sliceManager_loader, _this), sliceManager_classPrivateFieldGet(sliceManager_actionCollection, _this));
+      return new CustomSlice(sliceManager_classPrivateFieldGet(sliceManager_slice, _this), sliceManager_classPrivateFieldGet(sliceManager_loader, _this), sliceManager_classPrivateFieldGet(sliceManager_actionCollection, _this));
     });
     sliceManager_classPrivateFieldSet(_name, this, _name2 && _name2);
     sliceManager_classPrivateFieldSet(_initialState, this, initialState ? initialState : {
@@ -9156,9 +9152,8 @@ var SliceManager = /*#__PURE__*/function () {
     }
   }]);
 }();
-/* harmony default export */ const sliceManager = (SliceManager);
 // EXTERNAL MODULE: ./node_modules/redux-persist/lib/storage/createWebStorage.js
-var createWebStorage = __webpack_require__(596);
+var createWebStorage = __webpack_require__(215);
 ;// ./node_modules/redux-persist/lib/storage/index.js.flow
 // @flow
 
@@ -9442,9 +9437,9 @@ var PersistSliceManager = /*#__PURE__*/function () {
           transforms: persistSliceManager_classPrivateFieldGet(_transforms, _this)
         });
       }
-      return new persistSlice(customSlice, persistSliceManager_classPrivateFieldGet(persistSliceManager_config, _this));
+      return new PersistSlice(customSlice, persistSliceManager_classPrivateFieldGet(persistSliceManager_config, _this));
     });
-    persistSliceManager_classPrivateFieldSet(_sliceManager, this, new sliceManager(_name, initialState, true));
+    persistSliceManager_classPrivateFieldSet(_sliceManager, this, new SliceManager(_name, initialState, true));
     persistSliceManager_classPrivateFieldSet(persistSliceManager_config, this, _config2);
     persistSliceManager_classPrivateFieldSet(_blackList, this, _blackList2);
     persistSliceManager_classPrivateFieldSet(_persistStorage, this, _customStorage);
@@ -9468,7 +9463,6 @@ var PersistSliceManager = /*#__PURE__*/function () {
     }
   }]);
 }();
-/* harmony default export */ const persistSliceManager = (PersistSliceManager);
 ;// ./lib/index.js
 
 
