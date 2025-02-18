@@ -35,7 +35,7 @@ export default {
 
     // Оптимизация (опционально)
     optimization: {
-        minimize: true, // Минимизировать выходной файл
+        minimize: false, // Минимизировать выходной файл
     },
 
     // Настройка source maps (опционально)
