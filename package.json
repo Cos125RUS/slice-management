@@ -1,10 +1,12 @@
 {
   "name": "slice-management",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Set of classes for the quick creation and setting of slices",
   "license": "ISC",
-  "main": "index.js",
+  "main": "./dist/slice-management.js",
+  "module": "./dist/slice-management.js",
   "scripts": {
+    "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "type": "module",
@@ -24,5 +26,12 @@
     "@reduxjs/toolkit": "^2.5.1",
     "axios": "^1.7.9",
     "redux-persist": "^6.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.9",
+    "@babel/preset-env": "^7.26.9",
+    "babel-loader": "^9.2.1",
+    "webpack": "^5.98.0",
+    "webpack-cli": "^6.0.1"
   }
 }
