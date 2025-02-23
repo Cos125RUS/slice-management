@@ -1,11 +1,10 @@
 const path = require('path');
 
 module.exports = {
-    mode: 'production',
-    entry: './lib/index.js',
+    entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'slice-management.js',
+        filename: 'index.js',
         library: {
             name: 'SliceManagement', // Имя библиотеки
             type: 'umd', // Универсальный модуль (поддержка CommonJS, AMD и глобальной переменной)
@@ -15,7 +14,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.(js|flow)$/,
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
@@ -23,8 +22,8 @@ module.exports = {
             },
         ],
     },
-    optimization: {
-        minimize: false, // Отключить минификацию для читаемости
-    },
-    devtool: 'source-map', // Добавить source maps для отладки
+    // optimization: {
+    //     minimize: false, // Отключить минификацию для читаемости
+    // },
+    // devtool: 'source-map', // Добавить source maps для отладки
 };

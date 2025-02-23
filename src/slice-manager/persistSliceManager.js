@@ -1,5 +1,5 @@
 import {SliceManager} from "./sliceManager.js";
-import storage from "redux-persist/lib/storage/index.js.flow";
+import storage from "redux-persist/lib/storage";
 import {PersistSlice} from "./persistSlice.js";
 import {getTtlPersistTransform} from "./getTtlPersistTransform.js";
 
